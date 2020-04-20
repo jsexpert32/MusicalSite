@@ -1,0 +1,10 @@
+- if @user.errors.present?
+  | $.lazybox("#{j(render partial: 'sessions/profile_form', locals: {user: @user, avatar_data: @avatar_data})}", {esc: false, close: false, modal: true, klass: 'twitter-modal'});
+  | $("#inputFile").change(function () { readURL(this); });
+  | $('form.simple_form.edit_user .profile-form').addClass( 'hide' );
+  | $('form.simple_form.edit_user .error').first().parents('.profile-form').removeClass( 'hide' );
+  - if @avatar_data
+    | $('#image_upload_preview').attr('src', "#{@avatar_data}")
+- else
+  | $.lazybox.close();
+  | window.location = "#{home_index_path}"

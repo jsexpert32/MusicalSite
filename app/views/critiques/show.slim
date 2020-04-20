@@ -1,0 +1,69 @@
+section.artist-bg-img style="background-image:url(/assets/artist-bg-img.png)"
+  .center-container
+    .artist__wrap
+      .artist__info
+        .artist__header
+          span
+            .artist__thumb
+              = image_tag @track.user.avatar.url
+          span
+            span.verified-icon
+              = image_tag "verified-crown.svg"
+          span
+            h4
+              | #{@track.user.username}
+              span "#{@track.title}"
+      .columns.is-gapless.rectangle-232
+        .column.is-3.artist-img
+          = image_tag "artist-thumb2.jpg"
+        .column.is-9
+          .is-clearfix.artist__header-bottom
+            .is-pulled-left
+              ul.top-list
+                li
+                  = rating_link @track.id, 'fire', 'like'
+                  span id= "like_#{@track.id}"
+                    | #{@track.likes.count}
+                li
+                  = rating_link @track.id, 'sad','indifferent'
+                  span id= "indifferent_#{@track.id}"
+                    | #{@track.indifferents.count}
+                li
+                  = rating_link @track.id, 'unlike', 'dislike'
+                  span id= "dislike_#{@track.id}"
+                    | #{@track.indifferents.count}
+
+            .is-pulled-right
+              ul.top-list
+                li
+                  a href="#"  Contact
+                li
+                  a href="#"  info
+                li
+                  a.modal-button data-target="#share_song"
+                    = image_tag "/assets/share.svg"
+          .artist__streams#beat data-done="false" data-id=(@track.id)
+            = render partial: 'shared/waveform', locals: { url: extract_url(@track.audio.url), data: @track.waveform }
+    .critque-filter
+      .is-clearfix
+        .is-pulled-left
+          .critique-counter #{@comments.count} CRITIQUES
+        .is-pulled-right.sort-filter
+          .uk-form-select.uk-button data-uk-form-select=""
+            span
+            i.uk-icon-caret-down
+            = form_tag critique_path( @track.id ), method: :get do
+              = select_tag "sort",options_for_select(sort_params,selected: params[:sort]),onchange: "this.form.submit()"
+    ul.critique-commented-wrap.comment-lists.reminders
+      = render partial: "critiques/comment", :collection=>  @comments, :locals=> {animated_class: ""}
+
+    - if current_user
+      .comment-box--space
+      .comment-box
+        = form_for :comment, url: '/comments', html: { method: :post,id: "form_show_#{@track.id}", remote: :true} do |f|
+          .comment-area#comment-content
+            .comment-box__error.error
+            = hidden_field_tag "track_id", @track.id
+            = f.text_area :body, placeholder: "Type comment here"
+            button#send_comment.uk-button.send-btn.uk-button-success.uk-button-large onclick=("send_critique_comment(#{@track.id});return false")
+              = image_tag "/assets/up-arrow.png"

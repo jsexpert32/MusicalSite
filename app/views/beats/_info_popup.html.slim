@@ -1,0 +1,8 @@
+.popup.popup--info
+  .popup__avatar
+    span.verified-icon
+      = image_tag '/assets/verified-crown.svg'
+    = image_tag track.user.avatar_url
+    span.popup__name #{track.username}
+    span.popup__location #{track.user.city}, #{track.user.country}
+

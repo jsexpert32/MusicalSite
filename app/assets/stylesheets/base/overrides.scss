@@ -1,0 +1,441 @@
+@import url(https://fonts.googleapis.com/css?family=Yantramanav:100,500,300,700,400);
+
+.loader {
+  border: 2px solid $primary;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+.hide { display: none !important; }
+.hidden { display: none; }
+a:link, a:visited {
+  color: $white;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+// button
+.btn-hollow-rounded {
+  padding: 10px 15px;
+}
+.uk-button {
+  font-family: "Yantramanav";
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 2.2px;
+  color: $white;
+  text-transform: uppercase;
+}
+.uk-button-success {
+  background-color: $primary;
+  color: $white;
+}
+.uk-button-success:hover, .uk-button-success:focus {
+  background-color: $primarydark;
+  color: $white;
+}
+.uk-button-warning {
+  background-color: $warning;
+  color: $white;
+}
+.uk-button-warning:hover, .uk-button-warning:focus {
+  background-color: $warningdark;
+  color: $white;
+}
+.uk-button-exlarge {
+  padding: 10px 20px;
+  line-height: 60px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+.uk-button-link-success { color: $primary; }
+
+// range slider
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  animation: 0.2s;
+  box-shadow: none;
+  background: $black_49;
+  border-radius: 0;
+  border: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 20px;
+  background: $primary;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track { background: $black_49; }
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  animation: 0.2s;
+  box-shadow: none;
+  background: $black_49;
+  border-radius: 0;
+  border: none;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 20px;
+  background: $primary;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  animation: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: $white;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+input[type=range]::-ms-fill-upper {
+  background: $black_49;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 20px;
+  background: $primary;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower { background: $black_49; }
+input[type=range]:focus::-ms-fill-upper { background: $white; }
+
+// modal
+.modal-content {
+  max-width: 600px !important;
+  width: 600px !important;
+}
+
+.uk-modal-dialog.uk-modal-padding-l-r { padding: 0 30px; }
+
+#lazy_close {
+  padding: 0.5rem 0.5em;
+  background-color: $primary;
+  color: $white;
+  right: -42px;
+  top: -1px;
+  z-index: 3000;
+  position: fixed;
+  &:hover { background-color: $red; color: $white; }
+}
+#lazybox {
+  display: inline-table;
+  legend {
+    font-family: Yantramanav;
+    font-size: 16px;
+    letter-spacing: 2.7px;
+  }
+  a.next, button.next, input.next, .label-image, .next-form {
+    float: right;
+    margin-right: 2em;
+    background-color: $primary;
+    padding: 0.8rem;
+    margin-bottom: -19px;
+    color: $white;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    background-color: $primary;
+    font-family: "Yantramanav";
+    min-width: 100px;
+  }
+
+  &.twitter-modal {
+    width: 600px;
+    text-align: center;
+
+    select, input.string, input.password {
+      width: 390px;
+      border-bottom: 1px solid $darktext;
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    .tw-next {
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    .profile-form {
+      height: 390px;
+      margin-top: 50px;
+    }
+    .count-fields- {
+      &1 { select, input { margin-top: 110px; } }
+      &2 { select, input { margin-top: 60px; } }
+      &3 { select, input { margin-top: 25px; } }
+    }
+    .clearborder { height: 20px; }
+    .avatar-image {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 10px;
+      margin-top: 35px;
+    }
+
+    .label-image {
+      width: 150px;
+      float: none;
+      margin: 0;
+      display: inline-block;
+    }
+    legend { text-align: left; }
+    .provider-icon {
+      margin-right: 10px;
+      .fa { font-size: 30px; }
+
+      .fa-soundcloud { color: $soundcloud; }
+      .fa-twitter { color: $twitter; }
+    }
+
+    .error {
+      color: $warning;
+      display: block;
+      opacity: 0.5;
+      text-transform: uppercase;
+      font-size: 16px;
+      position: absolute;
+      text-align: left;
+      margin-left: 85px;
+    }
+  }
+}
+.uk-gray-select {
+  background-color: #32393A;
+  color: #8A7D66;
+  width: 220px;
+  padding: 8px 15px;
+  font-size: 14px;
+  span { float: left; }
+  i {
+    float: right;
+    color: $primary;
+    margin-top: 5px;
+    font-size: 18px;
+  }
+}
+.slider-inner #ninja-slider-pager {
+   padding-left: 50px;
+    top: 368px; }
+
+.simple_form {
+  .parsley-errors-list, span.error { color: $red-orange; }
+  &.user-profile {
+    max-width: 400px;
+    div {
+      margin-bottom: 10px;
+      height: inherit;
+      display: block;
+      border: none;
+
+      label {
+        color: $lighttext;
+        font-size: 16px;
+        display: block;
+      }
+
+      input { display: block; }
+    }
+
+    .button {
+      margin: 0 8px;
+      height: initial;
+      padding: 7px;
+    }
+
+    .label-image { text-align: center; }
+    .hidden { display: none; }
+  }
+
+  &.new_session {
+    max-width: 320px;
+    div.input { margin: 3px 0; }
+    input[type='email'], input[type='password'] { width: 100%; }
+    span.error { white-space: nowrap; }
+    label.checkbox { margin: 5px 5px 0 0; }
+  }
+
+  &#new_track {
+    .beat-title {
+      .parsley-errors-list {
+        white-space: nowrap;
+        width: auto;
+        font-family: Yantramanav;
+        font-size: 14px;
+        line-height: 1;
+        padding-top: 2%;
+      }
+
+      ul li {
+        font-weight: 500;
+        line-height: 0.9;
+      }
+    }
+
+    .description {
+      .parsley-errors-list {
+        font-family: Yantramanav;
+        font-size: 14px;
+        position: absolute;
+        bottom: 70%;
+        left: 5%;
+        width: 60%;
+        background-color: white;
+      }
+
+      ul li {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &#sign-up-form {
+    input.input-form, select {
+      width: 70%;
+      display: block;
+      font-size: 22px;
+      color: $darktext;
+      border: none;
+      box-shadow: none;
+      border-bottom: 1px solid $darktext;
+      font-family: Yantramanav;
+      padding-bottom: 7px;
+      margin-left: 1.1rem;
+      display: inline-block;
+      &::-webkit-input-placeholder {
+        font-family: Yantramanav;
+        font-size: 22px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        text-transform: initial;
+      }
+      &::-moz-placeholder {
+        font-family: Yantramanav;
+        font-size: 22px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        text-transform: initial;
+      }
+      &:-ms-input-placeholder {
+        font-family: Yantramanav;
+        font-size: 22px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        text-transform: initial;
+      }
+      &:-moz-placeholder {
+        font-family: Yantramanav;
+        font-size: 22px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        text-transform: initial;
+      }
+    }
+    .next-form {
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+    .parsley-errors-list, span.error {
+      font-size: 12px;
+      display: inline-block;
+      font-weight: 500;
+      text-transform: uppercase;
+      float: right;
+      width: 120px;
+      max-height: 35px;
+      line-height: 15px;
+      padding: 0 20px;
+      position: absolute;
+      li {
+        line-height: 15px;
+        font-weight: 500;
+      }
+    }
+    .checkbox-default, input.input-form, select, .parsley-errors-list {
+      margin-top: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .checkbox-default {
+      margin-left: 1.1rem;
+      display: inline-block;
+    }
+  }
+}
+.form-create-account {
+  width: 558px;
+  height: 488px;
+  overflow: auto;
+}
+
+.container.is-fluid { margin: 0; }
+
+#password_reset {
+  min-width: 300px;
+  padding: 15px 0;
+  div.input {
+    font-size: 18px;
+    padding: 15px 0;
+    width: 75%;
+  }
+  .input-form { width: 100%; }
+  .next-form {
+    padding: 0.5em;
+    font-size: 14px;
+    margin: 0;
+    min-width: 70px;
+  }
+  .parsley-errors-list, span.error {
+    font-size: 13px;
+    position: absolute;
+    text-transform: uppercase;
+    li {
+      line-height: 15px;
+      font-weight: 500;
+    }
+  }
+  .spinner-loader { font-size: 2px; }
+}
+
+@media screen and (min-width: 1220px) {
+  .uk-modal-dialog-large { width: 1160px; }
+}

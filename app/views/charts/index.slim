@@ -1,0 +1,26 @@
+.top-panel
+  .container
+    .columns
+      .column.is-gapless.is-6#all-beats-left
+        h1 Charts
+      .column.is-gapless.is-6#all-beats-right
+        .beats-menu
+          li.current
+            = link_to I18n.t('charts.period.week'), charts_path(period: 'by_week_charts'), remote: true
+          li
+            = link_to I18n.t('charts.period.month'), charts_path(period: 'by_month_charts'), remote: true
+          li
+            = link_to I18n.t('charts.period.all'), charts_path(period: 'by_all_time_charts'), remote: true
+#chartsBeats.scroll-right
+  section.inner-content
+    .container
+      .is-clearfix
+        .is-pulled-left
+          h4 Week of march 14
+        .is-pulled-right.sort-filter.select-input data-selectinput='true'
+          select.form-control name="order-by" id="charted-order-by"
+            option value='desc' Newest - Oldest
+            option value='asc' Oldest - Newest
+      #shared_results
+        = render partial: 'beats/beat', collection: @tracks, as: :track
+      = paginate @tracks, remote: true

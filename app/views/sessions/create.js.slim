@@ -1,0 +1,3 @@
+| $.lazybox.close();
+| $('.toastr_messages').html("#{ escape_javascript(render partial: 'shared/messages') }");
+| if("#{current_user}") window.location = "#{home_index_path(current_user)}";

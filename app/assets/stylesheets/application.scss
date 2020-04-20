@@ -1,0 +1,96 @@
+/*
+ *= require jquery-ui
+ *= require jquery.atwho
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
+ *= require sanitize-css
+ *= require ninja-slider
+ *= require loaders
+ *= require animate
+ *= require parsley
+ *= require drop-theme-arrows.min
+ *= require prism
+ *= require drop-theme-basic
+ *= require lazybox
+ *= require pages/mobile-slider
+ *= require mobile
+ *= require toastr
+ *= require_self
+
+ */
+
+@import 'lazybox';
+@import 'parsley';
+@import 'uikit';
+@import 'uikit-components';
+
+// Vendor Assets
+@import 'fractionalize';
+@import 'links';
+@import 'bulma';
+@import 'typebase';
+@import 'colors';
+
+@import url('//fonts.googleapis.com/css?family=Yantramanav:100,500,300,700,400');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
+html,body, button, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Yantramanav', sans-serif;
+}
+*{
+  outline: none;
+}
+
+// In-house Styles
+@import 'fonts';
+@import 'variables/*';
+@import 'base/overrides';
+@import 'base/components';
+@import 'base/new';
+@import 'base/spinner_loader';
+@import 'base/checkbox_default';
+@import 'components/container';
+@import 'components/select';
+@import 'pages/home';
+@import 'pages/critique';
+@import 'pages/critiques/comment_box';
+@import 'pages/critiques/artist_info';
+@import "pages/beats";
+@import "pages/beats-index";
+@import 'pages/extra';
+@import 'pages/tracks';
+@import 'pages/artists';
+@import 'pages/battlegrounds';
+@import 'pages/charts';
+@import 'pages/waitlists';
+@import 'pages/waitlists/*';
+@import 'pages/soundloud-tracks';
+@import 'pages/beats/beats_filter';
+@import 'pages/beats/beats_header';
+@import 'pages/beats/beat_main_left';
+@import 'pages/beats/beat_main_right';
+@import 'pages/beats/beat_section';
+@import 'pages/beats/player_popup';
+@import 'pages/tracks/*';
+@import 'pages/landing/landing';
+@import 'pages/landing/create-account-box';
+@import 'pages/profiles/profile';
+@import "partials/*";
+@import 'partials/beats/*';
+@import "pages/critiques-show";
+@import 'navigation/*';
+@import 'responsive/desktop_nav';
+@import 'responsive/profiles/profile';
+@import 'responsive/waitlists/*';
+@import 'responsive/tracks/*';
+@import 'responsive/beats/*';
+@import 'custom/checkboxes';
+@import 'customize/variables';
+@import 'customize/checkbox';
+
+.translation_missing {
+  color: red;
+  background: black;
+}
+
+.hide { display: none; }

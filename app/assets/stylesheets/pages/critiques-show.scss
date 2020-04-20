@@ -1,0 +1,385 @@
+.artist-bg-img{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  width: 100%;
+  background-attachment: fixed;
+  min-height:850px;
+}
+.center-container{
+  max-width: 775px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  .send-btn {
+    position: absolute;
+    right: 0;
+    bottom: 65px;
+    background-color: $primary;
+    min-height: 60px;
+    padding: 15px 27px;
+    line-height: 30px;
+    font-size: 16px;
+  }
+}
+
+.critque-filter {
+  background-color: $lightgray;
+  padding: 20px;
+  .critique-counter {
+    font-size: 16px;
+    letter-spacing: 2.7px;
+    color: $darktext;
+    line-height: 2.9rem;
+  }
+  .sort-filter {
+    .uk-button {
+      background-color: $white;
+      color: #8A7D66;
+      width: 220px;
+      padding: 8px 15px;
+      font-size: 14px;
+      span {
+        float: left;
+      }
+      i {
+        float: right;
+        color: #2bb673;
+        margin-top: 5px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+.critique-commented-wrap {
+  margin: 1px 0 0;
+  padding: 0;
+  position: relative;
+  li {
+    margin-bottom: 1px;
+    .critique-box {
+      background-color: $lightgray;
+      padding: 20px;
+      .critique-thumb {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+        position: relative;
+        .artist-crown {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          background: url(verified-crown-small.png) no-repeat;
+          width: 21px;
+          height: 21px;
+        }
+      }
+      .critique-detail {
+        width: 91%;
+        h5 {
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          font-weight: 500;
+          color: $primary;
+          margin: 0;
+        }
+        .right-nav {
+          > ul {
+            padding-left: 0;
+            margin: 0;
+            > li {
+              display: inline-block;
+              .critique-time {
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                color: $lighttext;
+                font-weight: 500;
+                text-transform: uppercase;
+              }
+            }
+          }
+          .uk-button-dropdown {
+            &.uk-open > .uk-dropdown {
+              padding: 0 15px;
+              margin-top: 0;
+              width: 240px;
+              right: -26px;
+              left: auto;
+              top: -20px;
+              background-color: $white;
+              box-shadow: -4px 5px 16px -5px rgba(0,0,0,0.5);
+              -webkit-box-shadow: -4px 5px 16px -5px rgba(0,0,0,0.5);
+              -moz-box-shadow: -4px 5px 16px -5px rgba(0,0,0,0.5);
+
+              .uk-nav-dropdown > li > a{
+                font-size: 15px;
+                line-height: 3.3;
+                letter-spacing: 2.2px;
+                color: $primary;
+                text-transform: uppercase;
+              }
+
+              .uk-nav-dropdown > li > a:hover{
+                background-color: $gray-accent;
+              }
+
+            }
+            &.uk-open .uk-button{
+              position: relative;
+              z-index: 1021;
+            }
+            .uk-button {
+              background-color: transparent;
+              line-height: 18px;
+              min-height: initial;
+              height: auto;
+              color: $primary;
+              font-size: 24px;
+              margin-left: 20px;
+
+              i {
+                font-size: 8px;
+                padding: 0 3px;
+
+              }
+            }
+          }
+        }
+        .critique-comment {
+          overflow-wrap: break-word;
+          color: $darktext;
+          font-size: 20px;
+          margin: 0;
+        }
+      }
+    }
+    &.write-comment {
+      position: fixed;
+      z-index: 3;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-width: 775px;
+      width: 100%;
+      margin: 0 auto;
+
+      .critique-box {
+        background-color: #f0f0f0;
+        padding: 20px;
+
+        .critique-thumb {
+          width: 40px;
+          height: 40px;
+          margin-right: 20px;
+          position: relative;
+        }
+        .critique-detail h5 {
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          font-weight: 500;
+          color: $primary;
+          margin: 0;
+        }
+        .critique-detail {
+          width: 80%;
+
+          input[type="text"] {
+            border:none;
+            font-size: 20px;
+            width: 100%;
+          }
+        }
+      }
+      .right-nav{
+        display: none;
+      }
+    }
+  }
+}
+.fly-up{
+  -webkit-backface-visibility: hidden;
+  -webkit-animation-name: flyTop;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+
+  backface-visibility: hidden;
+  animation-name: flyTop;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes flyTop{
+  0%{
+    transform:translateY(100%)
+  }
+  100%{
+    transform:translateY(0%)
+  }
+}
+
+.slide-up{
+  -webkit-backface-visibility: hidden;
+  -webkit-animation-name: slideUp;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+  backface-visibility: hidden;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideUp{
+  0%{
+    position: relative;
+    -webkit-transform:translateY(100%)
+  }
+  100%{
+    position: relative;
+    -webkit-transform:translateY(0%)
+  }
+}
+@-moz-keyframes slideUp{
+  0%{
+
+    -moz-transform:translateY(100%)
+  }
+  100%{
+    position: relative;
+    -moz-transform:translateY(0%)
+  }
+}
+@keyframes slideUp{
+  0%{
+    position: relative;
+    transform:translateY(100%)
+  }
+  100%{
+    position: relative;
+    transform:translateY(0%)
+  }
+}
+
+@media screen and (max-width:1199px) {
+  .critique-wrap {
+    .list-container {
+      .critique-box {
+        .critique-detail {
+          width: 89%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:979px) {
+  .critique-wrap {
+    .list-container {
+      .critique-listing {
+        > li {
+          padding: 20px 20px 30px;
+        }
+        .critique-box {
+          .critique-detail {
+            width: 86%;
+          }
+        }
+      }
+      .critique-right {
+        .critique-of {
+          margin-top: -20px;
+          margin-left: 20px;
+          padding: 20px 20px 0;
+        }
+        .song-name, a {
+          margin-left: 20px;
+          padding: 5px 20px;
+        }
+        a {
+          margin-top: 15px;
+          font-size: 13px;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:769px) {
+  .critique-wrap {
+    .list-container {
+      .critique-right {
+        .critique-of {
+          border-left: 0;
+          margin-top: 0;
+          margin-left: 0;
+          padding: 20px 0 0;
+        }
+        .song-name, a {
+          margin-left: 0;
+          padding: 5px 0;
+        }
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .center-container{
+    padding: 0 10px
+  }
+  .streams {
+    .fill-1 {
+      height: 45px;
+      width: 45px;
+      left: 0px;
+      top: -24px;
+      i {
+        font-size: 15px;
+        line-height: 45px;
+      }
+    }
+  }
+}
+@media screen and (max-width:599px) {
+  .critique-wrap {
+    .list-container {
+      .critique-listing {
+        .critique-box {
+          .critique-detail {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:479px) {
+  .critque-filter .sort-filter .uk-button {
+    width: 130px;
+    padding: 4px 11px;
+  }
+
+  .critique-commented-wrap li .critique-box .critique-detail {
+    width: 100%;
+  }
+  .critique-commented-wrap li .critique-box .critique-detail .right-nav{
+    float: left;
+    width: 100%;
+  }
+  .critique-commented-wrap li .critique-box .critique-detail .right-nav > ul > li:first-child{
+    float: left;
+  }
+  .critique-commented-wrap li .critique-box .critique-detail .right-nav > ul > li:last-child{
+    float: right;
+  }
+  .critique-commented-wrap li .critique-box .critique-detail .right-nav .uk-button-dropdown.uk-open > .uk-dropdown{
+    right: -20px;
+  }
+}

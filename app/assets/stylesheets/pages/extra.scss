@@ -1,0 +1,182 @@
+.battleground,.stores {
+  .banner-text {
+    padding: 17% 0;
+    margin: 0 auto;
+    max-width: 610px;
+    width: 100%;
+    text-align: center;
+
+    h1 {
+      margin:0;
+      font-family: "Yantramanav";
+      font-weight: 100;
+      color: $white;
+      font-size: 80px;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+    }
+    h4 {
+      display: inline-block;
+      font-size: 16px;
+      line-height: 1.9em;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: $white;
+      span {
+        color: $primary;
+        padding: 0 2px;
+      }
+    }
+  }
+  .wrapper-fixed-bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .wrapper {
+    padding: 20px 40px 40px;
+    background-color: $white;
+    > h5 {
+      text-align: center;
+      font-size: 15px;
+      letter-spacing: 1.9px;
+      color: $darktext;
+      text-transform: uppercase;
+    }
+  }
+  .email-box {
+    min-height: 295px;
+    padding: 45px 30px 0;
+    position: relative;
+    background-color: $lightgray;
+      h5 {
+        font-size: 15px;
+        color: $darktext;
+        text-align: center;
+        margin: 0;
+      }
+      .uk-form {
+        margin-top: 61px;
+        .uk-form-blank {
+          border-bottom: 1px solid $darktext !important;
+          font-size: 22px;
+          letter-spacing: 0.5px;
+          font-weight: 300;
+          max-width: 90%;
+          margin: 0 auto;
+          line-height: 2em;
+          height: 2em;
+        }
+        .submit-btn {
+          position: absolute;
+          bottom: 0;
+          right: 30px;
+          font-size: 15px;
+          letter-spacing: 2.2px;
+          color: $white;
+          text-transform: uppercase;
+          padding: 12px 20px;
+        }
+      }
+    }
+  }
+  .social-box {
+    padding: 45px 30px 0;
+    background-color: $lightgray;
+    min-height: 295px;
+    h5 {
+      font-size: 15px;
+      color: $darktext;
+      text-align: center;
+      margin: 0;
+    }
+    .getsocial {
+      max-width: 282px;
+      margin: 40px auto 0;
+      padding-left: 0;
+      text-align: center;
+      li {
+        display: inline-block;
+        padding: 10px;
+        a {
+          display: block;
+          width: 60px;
+          height: 60px;
+          border-radius: 80px;
+          font-size: 24px;
+          color: $white;
+          padding-top: 18px;
+          text-align: center;
+          &.twitter { background-color: $twitter; }
+          &.facebook{ background-color: #3b50a1; }
+          &.tumblr { background-color: #33485f; }
+          &.googleplus { background-color: #dc4a39; }
+          &.email { background-color: #92278f; }
+          &.sms { background-color: #2bb673; }
+        }
+      }
+    }
+    &.modal-social {
+      background-color: $white;
+      min-height: initial;
+      padding-left: 40px;
+      padding-right: 40px;
+      h5 {
+        font-size: 15px;
+        letter-spacing: 1.9px;
+      }
+      .getsocial {
+        max-width: 342px;
+        li {
+          padding: 20px;
+          a {
+            width: 70px;
+            height: 70px;
+            padding-top: 24px;
+          }
+        }
+      }
+      .btn-next { margin-top: 88px; }
+    }
+  }
+
+.stores {
+  .banner-text {
+    max-width: 840px;
+    text-align: center;
+    h4 { max-width: 690px; }
+  }
+}
+
+@media screen and (max-width:479px) {
+  .battleground,.stores {
+    .wrapper { padding: 20px 20px 20px; }
+    .email-box {
+      padding: 30px 20px;
+      min-height: 270px;
+      .uk-form {
+        .uk-form-blank { max-width: 100%; }
+        .submit-btn { right: 20px; }
+      }
+    }
+    .social-box {
+      padding: 30px 20px;
+      min-height: initial;
+      .getsocial {
+        max-width: 100%;
+        li {
+          padding: 5px;
+          a {
+            width: 50px;
+            height: 50px;
+            padding-top: 13px;
+          }
+        }
+      }
+    }
+  }
+  .social-box.modal-social {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

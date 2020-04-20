@@ -1,0 +1,69 @@
+.beat-header-mobile
+  .columns.is-mobile
+    .column.is-4
+      .filter-icon
+        a#beats-filter-mobile href="#"
+          span.filter-mobile-link
+            = image_tag '/assets/beats-filter.png'
+          span.filter-link-close 
+            = image_tag '/assets/close.png'
+    .column.is-8     
+      .styled-select.black.rounded
+        select
+          option Newest - Oldest
+          option Newest - Oldest
+= form_tag '/beats', id: 'beatsFilter' do
+  .column.is-3#mobile-beat-main-left.beat-main-left.animated.slideInLeft
+    h2 Filters
+    ul.left-beat-panel
+      li
+        span All beats
+        input#all_beats.css-checkbox.lrg.filter-in type="checkbox" name='filters[all_beats]'
+        label.css-label.lrg.klaus for="all_beats" name="checkbox1_lbl"
+      li
+        span Charted
+        = check_box_tag 'filters[charted]', 1, false, class: 'filter-in css-checkbox lrg charted-checkbox', id: 'charted'
+        label.css-label.lrg.klaus for="charted"
+    h2 RATING
+    ul.left-beat-panel#rating-check
+      li
+        = image_tag '/assets/range-fire.svg'
+        input#rating1.css-checkbox.lrg.filter-in type="checkbox" name='filters[ratings][]' value="like"
+        label.css-label.lrg.klaus for="rating1"
+      li
+        = image_tag '/assets/range-sad.svg'
+        input#rating2.css-checkbox.lrg.filter-in type="checkbox" name='filters[ratings][]' value="indifference"
+        label.css-label.lrg.klaus for="rating2"
+      li
+        = image_tag '/assets/range-unlike.svg'
+        input#rating3.css-checkbox.lrg.filter-in type="checkbox" name='filters[ratings][]' value="dislike"
+        label.css-label.lrg.klaus for="rating3"
+    h2 GENRE
+    ul.left-beat-panel
+      - @genres.each do |genre|
+        li
+          span = genre.name
+          = check_box_tag 'filters[genre][]', genre.id, false, class: 'filter-in css-checkbox lrg genre-checkbox', id: "check_genre#{genre.id}"
+          label.css-label.lrg.klaus for="check_genre#{genre.id}"
+    .apply-filter Apply filter   
+= render 'shared/mobile_beats',tracks: @tracks
+
+
+javascript:
+  $(document).ready(function(){
+    $(".filter-link-close").hide();
+    $(".beat-main-left").hide();
+
+    $(".filter-mobile-link").click(function(){
+      $(".filter-mobile-link").hide();
+      $(".filter-link-close").show();
+      $(".beat-main-left").show();
+    });
+
+    $(".filter-link-close").click(function(){
+      $(".filter-link-close").hide();
+      $(".beat-main-left").hide();
+      $(".filter-mobile-link").show();
+    });
+    
+  });

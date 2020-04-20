@@ -1,0 +1,51 @@
+#desktop-navigation
+  nav.navbar
+    .navbar__group
+      .navbar__item
+        = link_to home_index_path do
+          = image_tag "BT-logo.1.svg"
+      .navbar__item
+        = link_to_unless_current 'Beats',   beats_path do
+          span Beats
+      .navbar__item
+        = link_to_unless_current 'Charts', charts_path do
+          span Charts
+      .navbar__item
+        = link_to_unless_current 'Battleground', battleground_index_path do
+          span Battleground
+    .navbar__group.navbar__group--right
+      - if current_user
+        .navbar__item = link_to 'Upload', new_track_path
+        .navbar__item
+          a href="#"
+            i.fa.fa-comment aria-hidden="true"
+        .navbar__item
+          a href="#"
+            i.fa.fa-music aria-hidden="true"
+        .navbar__item.navbar__item--avatar
+          = link_to profile_path do
+            = user_avatar(current_user)
+        .dropdown
+          label for="drop"
+          input type='checkbox' id="drop"
+          .dropdown__content
+            .dropdown__top
+              span = current_user.name
+              .dropdown__right-group
+                = link_to profile_path do
+                  = user_avatar(current_user)
+                label
+            .dropdown__center
+              = link_to 'profile', profile_path
+              = link_to 'my artist page', artist_track_list_path(artist_id: current_user.id)
+              = link_to 'product', 'javascript:void(0);'
+              = link_to 'settings', 'javascript:void(0);'
+              = link_to 'sign out', signout_path
+            .dropdown__bottom
+              = link_to 'Legal', 'javascript:void(0);'
+              = link_to 'Copyright', 'javascript:void(0);'
+              = link_to 'Help', 'javascript:void(0);'
+
+      - else
+        .navbar__item = link_to :sign_in, signin_path, remote: true
+        .navbar__item.navbar__item--btn = link_to :sign_up, signup_path, remote: true

@@ -1,0 +1,161 @@
+// Black Nav
+@import url(https://fonts.googleapis.com/css?family=Yantramanav:100,500,300,700,400);
+
+// Modals
+
+.logins {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  text-align: center;
+
+  h4 {
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 1.9px;
+    text-transform: uppercase;
+    color: $darktext;
+    margin-bottom: 1em;
+  }
+  .button {
+    padding: 2em;
+    margin: 0 23px;
+    border: none; outline: none;
+
+    i { color: $white; top: -18px; position: relative; }
+
+    &:hover { text-shadow: 0 0 10px #fff; text-decoration: none; }
+
+    &.email {
+      padding: 3rem 11rem;
+      background-color: $primary;
+      i { font-size: 50px; position: relative; }
+    }
+    &.twitter { background-color: $twitter; }
+    &.soundcloud { background-color: $soundcloud; }
+    &.social {
+      padding: 3rem 4.2rem;
+      i { font-size: 40px; position: relative; }
+    }
+
+    &.submit {
+      float: right;
+      color: $white;
+      margin-top: 2em;
+      font-weight: 500;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      background-color: $primary;
+      font-family: "Yantramanav";
+      position: relative;
+      top: 1px;
+      padding: 1em;
+      padding-bottom: 1.5em;
+      padding-top: 2em;
+      border-radius: 0;
+      font-size: 15px;
+      border: 0;
+
+      &.inactive {
+        background-color:  $gray-accent;
+        &:hover, &:focus {text-shadow: none; text-decoration: none; }
+      }
+    }
+  }
+}
+
+// Forms
+
+.borderless-form {
+  padding-bottom: 1rem;
+  &.animated { animation-iteration-count: 1; }
+  input {
+    width: 60%;
+    display: block;
+    font-size: 22px;
+    color: $darktext;
+    border: none; box-shadow: none;
+    margin: 1.4rem 3.1rem;
+    line-height: 3em;
+    border-bottom: 1px solid $darktext;
+    font-family: "Yantramanav";
+    font-weight: 300;
+    &.error { border-bottom-color: $red; border-bottom-width: 2px; }
+    &:focus { padding: 0 1em;outline: none; background-color: $lightgray; }
+  }
+  select {
+    width: 60%;
+    display: block;
+    font-size: 20px;
+    margin: 2em 3.1rem;
+    line-height: 3em;
+    border-bottom: 1px solid $darktext;
+    font-family: "Yantramanav";
+    font-weight: 300;
+    &.error { background-color: $red; }
+  }
+  .uk-alert {
+    width: 80%;
+    margin: 0.5em auto;
+    border-radius: 1em;
+    border: 1px dashed red;
+  }
+}
+.borderless-form-1, .borderless-form-2 {
+  padding-bottom: 1rem;
+  &.animated { animation-iteration-count: 1; }
+  input {
+    width: 60%;
+    display: block;
+    font-size: 22px;
+    color: $darktext;
+    border: none;
+    box-shadow: none;
+    margin: 1.4rem 3.1rem;
+    line-height: 3em;
+    border-bottom: 1px solid $darktext;
+    font-family: "Yantramanav";
+    font-weight: 300;
+    &.error { border-bottom-color: $red; border-bottom-width: 2px; }
+    &:focus { padding: 0 1em;outline: none; background-color: $lightgray; }
+  }
+  select {
+    width: 60%;
+    display: block;
+    font-size: 20px;
+    margin: 2em 3.1rem;
+    line-height: 3em;
+    border-bottom: 1px solid $darktext;
+    font-family: "Yantramanav"; font-weight: 300;
+    &.error { background-color: $red; }
+  }
+  .uk-alert {
+    width: 80%;
+    margin: 0.5em auto;
+    border-radius: 1em;
+    border: 1px dashed red;
+  }
+}
+
+.borderless-form-2 {
+  padding: 2rem;
+  padding-left: 0;
+  input { width: 80%; }
+  .parsley-required { margin: 0 6rem; }
+}
+
+.uk-gray-select {
+  background-color: #32393A;
+  color: #8A7D66;
+  width: 220px;
+  padding: 8px 15px;
+  font-size: 14px;
+  span { float: left; }
+  i {
+    float: right;
+    color: $primary;
+    margin-top: 5px;
+    font-size: 18px;
+  }
+}
+

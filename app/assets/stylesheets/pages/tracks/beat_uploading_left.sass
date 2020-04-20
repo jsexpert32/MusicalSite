@@ -1,0 +1,126 @@
+.beat-uploading
+
+  &__left
+
+    .parsley-errors-list
+      font-size: 14px
+      position: absolute
+      bottom: 67%
+      left: 5%
+
+    li
+      font-weight: 500
+
+    img
+      width: 400px
+      height: 400px
+      background-color: $darktext
+
+    label
+      position: relative
+
+  &__bottom
+    text-align: right
+    overflow-y: auto
+    margin-top: 20px
+
+  #lazy_body &__bottom
+    margin-bottom: -25px
+    position: relative
+
+  &__button
+    background-color: $white
+    color: $darktext !important
+    float: right
+    font-size: 15px
+    letter-spacing: 2.2px
+    line-height: 47px
+    padding: 0 20px
+    text-align: center
+    text-transform: uppercase
+
+    &--finish
+      background-color: $primary
+      color: $white !important
+
+  &__browse
+    background: $primary
+    bottom: 8px
+    height: 47px
+    left: -180px
+    position: absolute
+    text-align: center
+    width: 129px
+
+    &:hover
+      cursor: pointer
+
+    label
+      font-size: 18px
+      letter-spacing: 1.3px
+      color: $white
+      font-weight: lighter
+      text-transform: uppercase
+
+    span
+      line-height: 50.5px
+      font-size: 15px
+      letter-spacing: 1.3px
+      color: $white
+      text-transform: uppercase
+
+  &__choose
+    text-align: center
+    padding-right: 40px
+
+    label
+      background-color: $primary
+      color: $white
+      font-size: 15px
+      padding: 10px 20px
+
+  &__upload-content
+    background-color: $white
+    padding: 36px 40px
+
+    h3
+      color: $darktext
+      font-size: 16px
+      font-weight: 500
+      letter-spacing: 1.9px
+      margin: 0 0 35px
+      text-align: center
+
+  &__file
+    background-color: $lightgray
+    padding: 78.3px 0
+    margin: 0 8px 8px
+    text-align: center
+
+    p
+      font-size: 14px
+      letter-spacing: 0.6px
+      color: $lighttext
+      text-transform: uppercase
+      font-weight: 500
+      margin-top: 46.3px
+
+  &__choose-file
+    background-color: $primary
+    color: $white
+    font-size: 18px
+    letter-spacing: 1.3px
+    text-transform: uppercase
+    line-height: 83.5px
+    max-width: 290px
+    margin: 0 auto
+
+    &--scloud
+      background-color: $soundcloud
+
+      & > img
+        margin-left: 10px
+        vertical-align: inherit
+
+      a:hover
+        text-decoration: none

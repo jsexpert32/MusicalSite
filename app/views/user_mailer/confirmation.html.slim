@@ -1,0 +1,6 @@
+h1= @user.username
+p
+  => 'Please, click'
+  => link_to :here, edit_user_url(token: @confirm_token, id: @user)
+  = 'to complete'
+br

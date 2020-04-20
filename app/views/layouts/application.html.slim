@@ -1,0 +1,14 @@
+doctype html
+html
+  = render 'layouts/head'
+  body class="#{body_class}"
+    .container.is-fluid
+      .toastr_messages
+        = render 'shared/messages'
+
+      .header.bth-header
+        = render 'shared/nav'
+
+      = yield
+
+    = insert_paloma_hook

@@ -1,0 +1,5 @@
+| $.lazybox("#{j(render partial: 'form', locals: {user: @user})}");
+| $('#sign-up-form').parsley({successClass: "has-success", errorClass: "has-error"});
+- if @user.errors.present?
+  | $('.form-create-account .form-user').addClass( 'hide' ).removeClass( 'show' );
+  | $('.form-create-account span.error').first().parents('.form-user').removeClass( 'hide' ).addClass( 'show' );

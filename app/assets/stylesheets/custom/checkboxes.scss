@@ -1,0 +1,17 @@
+$checkbox: (
+  border-radius: 0,
+  font-size: 1.4em,
+  background: $white,
+  transition: all $transition-time ease-in-out
+);
+
+$checkbox-hover: (
+  border: $slim-border solid $lighttext,
+  background: $primary
+);
+
+$checkbox-checked: (
+  border: $slim-border solid $white,
+  background: $primary,
+  color: $white
+)

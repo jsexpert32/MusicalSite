@@ -1,0 +1,24 @@
+- if params[:period]
+  - if params[:page]
+    | $('#shared_results').append("#{ j render partial: 'beats/beats', locals: { tracks: @tracks } }");
+
+    - if @tracks.last_page?
+      | $('.pagination').hide();
+    - else
+      | $('.pagination').replaceWith("#{ j paginate @tracks, remote: true }");
+
+  - else
+    | $('#shared_results').html("#{ j render partial: 'beats/beats', locals: { tracks: @tracks } }");
+    | $('.pagination').replaceWith("#{ j paginate @tracks, remote: true }");
+
+- else
+  | $('#shared_results').append("#{ j render partial: 'beats/beats', locals: { tracks: @tracks } }");
+
+  - if @tracks.last_page?
+    | $('.pagination').hide();
+  - else
+    | $('.pagination').replaceWith("#{ j paginate @tracks, remote: true }");
+
+| wait_and_run(waveform_proc(), 500);
+| initSlider();
+| likeTrack();

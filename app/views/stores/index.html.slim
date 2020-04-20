@@ -1,0 +1,68 @@
+.uk-cover-background style="background-image:url(/assets/b-g-image-2.png)"
+	.banner-text
+		h1 BEAT THREAD STORE
+		h4
+			|	GET CRITIQUES FROM THE PROS
+			span
+				|	/
+			|	EXCLUSIVE KITS & SAMPLES
+			span
+				|	/
+			|	EXCLUSIVE VINYL PRESSINGS PRO TUTORIALS
+			span
+				|	/
+			|	SELL YOUR KITS & SAMPLES
+			span
+				|	/
+			|	ACCESS TO SPECIAL EVENTS
+	.wrapper-fixed-bottom
+		.container
+			.wrapper
+				h5.title.is-5 BEAT THREAD STORE COMING SOON
+				.columns
+					.column.is-6
+						.email-box
+							h5.title.is-5 Are you interested in selling?
+							form.uk-form
+								.uk-form-row.uk-text-center
+									input type="email" placeholder="Your email" class="uk-width-1-1 uk-form-blank uk-form-large"
+								.uk-form-row
+									input type="button" value="submit" class="uk-button uk-button-success submit-btn"
+					.column.is-6
+						.social-box
+							h5.title.is-5 Spread the word and get special Battleground consideration
+							ul.getsocial
+								li
+									a href="#" class="twitter"
+										i class="uk-icon-twitter"
+								li
+									a href="#" class="facebook"
+										i class="uk-icon-facebook"
+								li
+									a href="#" class="tumblr"
+										i class="uk-icon-tumblr"
+								li
+									a href="#" class="googleplus"
+										i class="uk-icon-google-plus"
+								li
+									a href="#" class="email"
+										i class="uk-icon-envelope"
+								li
+									a href="#" class="sms"
+										i class="uk-icon-comment"
+
+javascript:
+	$('#store').addClass('active');
+	
+	// upload/social box at fixed bottom postion on the page 
+	var w_height = $(window).height(),
+			fixed_wrap = $('.wrapper-fixed-bottom');
+
+	if(w_height <= 990) {
+			$(fixed_wrap).css('position','static');
+			$('.uk-cover-background').css('minHeight',w_height);
+	}
+		else {
+			$(fixed_wrap).css('position','fixed');
+			$('.uk-cover-background').css('height',w_height);
+		}

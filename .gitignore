@@ -1,0 +1,44 @@
+/config/initializers/1pg.rb
+# Bundler config
+/.bundle
+/vendor/bundle
+
+# IDE configs
+/.idea
+/.sass-cache
+# Logs and tempfiles
+*.log
+/log/*
+!/log/.keep
+/tmp
+
+# Re-compilable assets
+/public/production/assets
+
+# Uploads
+/public/uploads
+/public/assets
+
+# Re-generatable docs
+/doc
+
+# Byebug commands history
+/.byebug_history
+
+# SimpleCov results
+/coverage
+.ruby-version
+.ruby-gemset
+
+# Secrets
+/config/secrets.yml
+# Database
+/config/database.yml
+
+# Miscellaneous apps trash
+.key
+.DS-Store
+*.DS_Store
+/dump.rdb
+dump.rdb
+*.swp

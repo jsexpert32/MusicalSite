@@ -1,0 +1,31 @@
+.back-cover-image style="background-image: #{@background_image}"
+  = render 'artist_header'
+  .container
+    .user-wrap
+      .right-btns
+        ul
+          li
+            a href='#edit_user_about' data-uk-modal="{center:true}" edit content
+          li
+            a id='open_edit_tool' href="javascript:void(0);" edit background
+            = render 'image_edit_tools'
+      .user-photo.is-clearfix
+        .user-thumb-round
+          = image_tag @user.avatar.url
+        .user-title
+          h2 = @user.username
+          h4 = @user.location
+    = render 'user_about'
+= render layout: 'modal_big', locals: { id: 'edit_user_about' } do
+  = render 'user_side_about_edit'
+
+javascript:
+  $('#user_about').addClass('active');
+  $('#open_edit_tool').on('click',function(){
+    $(this).next().show();
+    $(this).hide();
+    $('.btn-cancel').click(function(){
+      $('#open_edit_tool').show();
+      $('.background_edit').hide();
+    });
+  });

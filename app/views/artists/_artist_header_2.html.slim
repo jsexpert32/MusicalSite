@@ -1,0 +1,41 @@
+header.artist_header.artist_header2
+  a href='javascript:void(0)' class='aside-nav'
+    i class='uk-icon-navicon'
+  .container
+    .columns
+      .column
+        .page_visibility.is-clearfix
+          .user-thumb-small
+            = image_tag 'artist-big-thumb.png'
+            .verified-crown
+              = image_tag 'verified-crown-medium.png'
+          span.title.is-4.text-white.font-light.m-right-20 Chris Keys
+          span.title.is-6.text-white.font-bold OAKLAND, CA
+      .column.nav-right
+        ul
+          li id='user_beats'
+            a href='#' Beats
+          li id='user_store'
+            a href='#' Store
+          li id='user_about'
+            a href='#' About & contact
+
+javascript:
+  $(window).bind('scroll', function(){
+    if ($(window).scrollTop() > 300) {
+      $("header").addClass('fixed-header');
+    }
+    else {
+      $("header").removeClass('fixed-header');
+    }
+    var getHeightHeader = $('.artist_header2').height();
+    if ($(window).scrollTop() > 400) {
+      $(".artist_beats_public").addClass('filter-row-fixed');
+      $('.artist_beats_public').find('.is-clearfix').addClass('container');
+      $(".artist_beats_public").find('.filter-row').css('top',getHeightHeader);
+    }
+    else {
+      $(".artist_beats_public").removeClass('filter-row-fixed');
+      $('.artist_beats_public').find('.is-clearfix').removeClass('container');
+    }
+  });

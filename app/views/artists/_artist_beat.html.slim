@@ -1,0 +1,14 @@
+.container.artist_beats_public
+  .filter-row
+    .is-clearfix
+      .is-pulled-left.b_counter_show
+        .beats_counter = "#{@artist_tracks.count} BEATS"
+      .is-pulled-right.sort-filter
+        .uk-form-select.uk-button.uk-button-white.uk-button-large data-uk-form-select=""
+          span
+          i.uk-icon-caret-down
+          = form_for_filterrific @filterrific do |f|
+            = f.select(:sorted_by, @filterrific.select_options[:sorted_by])
+  #filterrific_results
+    - tracks.each do |track|
+      = render partial: 'beats/track', locals: { track: track }

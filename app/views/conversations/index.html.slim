@@ -1,0 +1,28 @@
+h1 Conversations
+
+hr
+span
+  |Inbox
+  = "(#{current_user.mailbox.inbox.unread(current_user).count}) | "
+  |All conversations
+  = "(#{current_user.mailbox.conversations.count}) | "
+  |Sent
+  = "(#{current_user.mailbox.sentbox.count}) | "
+  |Trash
+  = "(#{current_user.mailbox.trash.count}) | "
+hr
+
+hr
+span
+  |Total:
+  = @conversations.count
+
+- @conversations.each do |conversation|
+  div
+    - if conversation.is_unread?(current_user)
+      strong = link_to conversation.subject, conversation_path(conversation)
+    - else
+      = link_to conversation.subject, conversation_path(conversation)
+br
+hr
+= link_to "new conversation", new_conversation_path

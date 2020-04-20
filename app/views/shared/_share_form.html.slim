@@ -1,0 +1,36 @@
+.social-box.modal-social
+	h5.title HOW WOULD YOU LIKE TO SHARE
+	ul.getsocial
+		li
+			a href="https://twitter.com/intent/tweet?status=#{@track.title} + https://beatthread.com" class="share-button twitter" target="_blank"
+				i class="uk-icon-twitter"
+		li
+			a href="http://www.facebook.com/sharer/sharer.php?u=https://beatthread.com&title=#{@track.title}" class="share-button facebook" target="_blank"
+				i class="uk-icon-facebook"
+		li
+			a href="http://www.tumblr.com/share?v=3&u=https://beatthread.com&t=#{@track.title}" class="share-button tumblr" target="_blank"
+				i class="uk-icon-tumblr"
+		li
+			a href="https://plus.google.com/share?url=https://beatthread.com" class="share-button googleplus" target="_blank"
+				i class="uk-icon-google-plus"
+		li
+			a href="mailto:?Subject=#{@track.title} by #{@track.user.username}&amp;&Body=#{@track.description}" class=" email"
+				i class="uk-icon-envelope"
+		li
+			a href="sms:?&body=" class=" sms"
+				i class="uk-icon-comment"
+	.text-right
+		a class="uk-button uk-button-success uk-button-large btn-next" id="social-share-close" Done
+
+
+
+javascript:
+	$('#social-share-close').click(function() {
+		$.lazybox.close();
+	});
+	
+
+
+	$('.share-button').click(function() {
+		window.open(this.href,'', "height=600 width=600  resizable=yes scrollbars=yes")
+	});

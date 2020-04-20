@@ -1,0 +1,140 @@
+.player
+  background: none repeat scroll 0 0 $white
+  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.2)
+  padding: 15px 30px
+  position: fixed
+  bottom: 0
+  width: 100%
+  z-index: 5
+  height: 70px
+
+  &__play
+    overflow-y: auto
+
+  &__time
+    color: $darktext
+    float: left
+    font-size: 12px
+    letter-spacing: 0.4px
+    padding: 5px 8px
+    position: relative
+    top: 5px
+
+    &--right
+      float: right
+      right: 0
+      top: -15px
+
+  &__scrub-line
+    background-color: $gray-accent
+    width: 80%
+    margin: 19px auto 0
+
+    .fill-1
+      height: 34.6px
+      left: auto
+      width: 34.6px
+      margin-left: 10%
+
+      i
+        line-height: 34.6px
+
+  &__scrub-line-progress
+    height: 2px
+    background-color: $primary
+    width: 37%
+    margin: 19px 0 0
+
+  &__artist
+    font-size: 14px
+    color: $darktext
+
+    img
+      float: left
+      width: 40px
+      height: 40px
+      margin-right: 15px
+
+    & > span
+      display: block
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+
+  &__volume
+    background: none repeat scroll 0 0 $white
+    box-shadow: 0 -6px 20px 0 rgba($black, 0.3)
+    display: none
+    padding: 15px 0
+    position: absolute
+    bottom: 51px
+    left: -12px
+    width: 65px
+    z-index: 5
+    height: 195px
+
+    &:hover
+      display: block
+
+    #slider-vertical
+      height: 100%
+
+    .ui-slider-vertical
+      height: 100px
+      margin: 0 auto
+      width: 2px
+      background-color: $gray-accent
+
+    .ui-widget-content
+      background: $gray-accent
+      border: 0 none
+      color: $dark-gray
+
+    .ui-widget-header
+      background: $primary
+
+    .ui-slider-handle
+      background: $primary
+      box-shadow: none
+      left: -7px
+
+  &__list
+    margin: 7px 0
+    padding: 0px 15px
+    list-style: none
+    display: inline-block
+
+    li
+      position: relative
+      display: inline-block
+      font-size: 14px
+      padding: 0 10px
+      line-height: normal
+      vertical-align: middle
+
+  &__title
+    color: $primary
+    display: inline
+    letter-spacing: 2px
+    padding: 0 15px
+    font-size: 15px
+
+    &--beat
+      padding: 0
+      letter-spacing: .6px
+
+  .top-list
+    padding: 0 15px
+    border-left: 1px solid $gray-accent
+    border-right: 1px solid $gray-accent
+
+  .top-list li
+    padding: 0 15px
+
+  &__open-volume
+    width: 0
+    height: 0
+    position: absolute
+
+    &:focus ~ .player__volume
+      display: block

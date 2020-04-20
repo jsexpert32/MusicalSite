@@ -1,0 +1,16 @@
+.back-cover-image style="background-image: #{@background_image}"
+  = render 'artist_header_2'
+  .container
+    .user-wrap
+      .user-photo.is-clearfix
+        .user-thumb-round
+          .verified-crown
+            = image_tag 'verified-crown-large.png'
+          = image_tag = @user.avatar.url
+        .user-title
+          h2= @user.username
+          h4= @user.location
+    = render 'artist_beat', tracks: @tracks
+
+javascript:
+  $('#user_beats').addClass('active');

@@ -1,0 +1,29 @@
+li class="#{animated_class}"
+  .critique-box.is-clearfix
+    .critique-thumb.is-pulled-left
+      exit
+       = image_tag comment.user.avatar.url
+    .critique-detail.is-pulled-left
+      .is-clearfix
+        .is-pulled-left
+          h5 #{comment.user.username}
+        .is-pulled-right.right-nav
+          ul
+            li
+              span.critique-time  #{time_ago_in_words(comment.created_at).gsub('about','')} ago
+            li
+              .uk-button-dropdown data-uk-dropdown="{mode:'click'}"
+                button.uk-button
+                  i.uk-icon-circle
+                  i.uk-icon-circle
+                  i.uk-icon-circle
+                .uk-dropdown.ukdropdown-bottom
+                  ul.uk-nav.uk-nav-dropdown
+                    li
+                      a href="#"  Share
+                    li
+                      a href="#"  Flag comment
+                    li
+                      a href="#"  report user
+                    
+      h3.critique-comment #{comment.body}

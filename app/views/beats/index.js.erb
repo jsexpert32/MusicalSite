@@ -1,0 +1,27 @@
+<% if params[:filters] %>
+  <% if params[:page] %>
+    $("#filterrific_results").append("<%= j render partial: 'beats/beats', locals: { tracks: @tracks } %>");
+
+    <% if @tracks.last_page? %>
+      $('.pagination').hide();
+    <% else %>
+      $('.pagination').replaceWith('<%= j paginate @tracks, remote: true %>');
+    <% end %>
+
+  <% else %>
+    $('.beat-col-right').scrollTop(0)
+    $('.pagination').replaceWith('<%= j paginate @tracks, remote: true %>');
+    $("#filterrific_results").html("<%= j render partial: 'beats/beats', locals: { tracks: @tracks } %>");
+  <% end %>
+<% else %>
+  $("#filterrific_results").append("<%= j render partial: 'beats/beats', locals: { tracks: @tracks } %>");
+
+  <% if @tracks.last_page? %>
+    $('.pagination').hide();
+  <% else %>
+    $('.pagination').replaceWith('<%= j paginate @tracks, remote: true %>');
+  <% end %>
+<% end %>
+wait_and_run(waveform_proc(), 500);
+initSlider();
+likeTrack();

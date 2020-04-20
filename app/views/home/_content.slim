@@ -1,0 +1,39 @@
+section.hide-on-mobile
+  .landing  data-uk-parallax="{ bg: '-500', viewport: '0.5' }"
+    .landing__col.landing__col--left.textbox
+
+      h1 Rate beats
+      p
+        | The best beats rise through the ranks and eventually top the beat charts.
+        br/
+        br/
+      a href="#"  Go ahead, click a rating emoji...
+
+    .landing__col.landing__col--right.swagbox--top data-first=''
+      = render partial: 'beats/beat', locals: { track: @tracks.sample, index: 0, charted_time: I18n.t('charts.charted_time.' + (params[:period] || 'charts_by_week')), count: 1 }
+
+    .landing__col.landing__col--right.slide-down
+      = render partial: 'beats/beat', locals: { track: @tracks.sample, index: 0, charted_time: I18n.t('charts.charted_time.' + (params[:period] || 'charts_by_week')), count: 1 }
+
+    .landing__col.landing__col--left.textbox style="vertical-align:bottom; margin-top: 4rem;"
+      h1 Give feedback
+      p
+        | Constructive criticism is what makes us all better. Join the conversation!
+        br/
+
+
+      a href="#"  Leave thoughtful critiques, find contact information and get some behind-the-scenes notes from the artist about the track.
+
+    .landing__section
+
+      h1  Your own artist page
+
+      p   A customizable online presence with your own Beat Thread URL.
+
+      .column.is-10.is-offset-1
+        center
+        video autobuffer="autobuffer" autoplay="autoplay" controls="controls" src="/assets/BT-walkthrough-625c41454911bd630564f2907abbbf2e2e4630c6c05ca72ca5f61ebcf360fdbf.mov" width="100%" class="home-video"
+
+footer.hide-on-mobile
+  .navbar-item  = link_to 'CREATE AN ACCOUNT',        signup_path, remote: true, class: 'button create-account bg'
+  p.navbar-item = link_to 'EXISTING USERS, SIGN IN',  signin_path, remote: true, class: 'sign-in'

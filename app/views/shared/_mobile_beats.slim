@@ -1,0 +1,130 @@
+- @tracks.each do |track|
+  .mobile-beats-section
+  .columns
+    .column.is-12
+      .beat-list-mobile
+        .beat-mobile-header
+          .media-left
+            .icon-lg
+              span.verified-icon
+                img alt=("Verified crown") src="/assets/verified-crown.svg" /
+              = image_tag '/assets/chris.png'
+          .media-body
+            h6 Chris Keys
+            p Sour Masch
+
+        .beat-mobile-content
+          .beats-show
+            a href="#" 
+              .fill-1
+                i#play-btn-1.fa.fa-play.play-btn
+            = image_tag '/assets/artist-bg-img.png'
+          .beats-rating-list id="ratelist_#{track.id}"
+            ul.top-list
+              li
+                = rating_link track.id, 'fire', 'like'
+                span id="like_#{track.id}"
+                  | #{track.like_count}
+              li
+                = rating_link track.id, 'sad', 'indifferent'
+                span id="indifferent_#{track.id}"
+                  | #{track.indifferent_count}
+              li
+                = rating_link track.id, 'unlike', 'dislike'
+                span id="dislike_#{track.id}"
+                  | #{track.dislike_count}
+          .beats-critique-mobiletab id="mobile_critique_tabs_#{track.id}"
+            ul.mobile-tabs-menu
+              li.current
+                a href="#mobile-tab-1"  Critique
+              li
+                a href="#mobile-tab-2"  Contact
+              li
+                a href="#mobile-tab-3"  Info
+              li
+                a href="#mobile-tab-4"
+                  = image_tag '/assets/share.svg'
+            .mobile-tab
+              #mobile-tab-1.mobile-tab-content
+                span.hidden.mobile-critique-info
+                  = link_to 'More By This Artist',artist_track_list_path(track.artist_type.try(:id) || 'Error')
+                  = link_to 'See All Critiques', critiques_path
+                = form_for :comment, html: {id: "form_#{track.id}"} do |f|
+                  = hidden_field_tag :track_id, track.id
+                  = f.text_area :body, placeholder: 'Write your critique here', class: 'textarea'
+                span.counter
+                  -if current_user
+                    a class='send-button' href="#-" onclick=("send_comment(#{track.id});return false") id="send_#{track.id}" Send
+                  -else
+                    a class='send-button' href="#-" id="send_#{track.id}" Send
+              #mobile-tab-2.mobile-tab-content
+                p Donec semper dictum sem, quis pretium sem malesuada non. Proin venenatis orci vel nisl porta sollicitudin. 
+              #mobile-tab-3.mobile-tab-content
+                p Duis egestas fermentum ipsum et commodo. Proin bibendum consectetur elit, hendrerit porta mi dictum eu.
+              #mobile-tab-4.mobile-tab-content
+                p Proin sollicitudin tincidunt quam, in egestas dui tincidunt non. Maecenas tempus condimentum mi, sed convallis tortor iaculis eu.
+
+        .beat-mobile-footer
+          ul
+            li
+              a id="rate_tab_#{track.id}" href="#"
+                span.rate-link id="#{track.id}" rate
+                span.rate-link-close id="#{track.id}" 
+                 = image_tag '/assets/close.png'
+            li
+              a id="critique_tab_#{track.id}" href="#"
+                span.critique-link id="#{track.id}" critique
+                span.critique-link-close id="#{track.id}" 
+                 = image_tag '/assets/close.png'
+
+
+            
+javascript:
+  $(document).ready(function(){
+    $(".mobile-tabs-menu a").click(function(event) {
+        event.preventDefault();
+        $(this).parent().addClass("current");
+        $(this).parent().siblings().removeClass("current");
+        var tab = $(this).attr("href");
+        $(".mobile-tab-content").not(tab).css("display", "none");
+        $(tab).fadeIn();
+    });
+
+    $(".beats-rating-list").hide();
+    $(".beats-critique-mobiletab").hide();
+
+    $(".rate-link").click(function(){
+      track_id = this.id
+      $("#critique-tab").removeClass('close-tab-icon');
+      $(".beats-show").hide();
+      $(".beats-critique-mobiletab").hide();
+      $("#rate_tab_"+track_id).addClass('close-tab-icon');
+      $("#ratelist_"+track_id).show();
+    });
+    
+    $(".rate-link-close").click(function(){
+      $(".beats-critique-mobiletab").hide();
+      $(".beats-rating-list").hide();
+      $("#rate-tab").removeClass('close-tab-icon');
+      $(".beats-show").show();
+    });
+
+    $(".critique-link").click(function(){
+      track_id = this.id
+      $("#rate_tab_"+track_id).removeClass('close-tab-icon');
+      $(".beats-show").hide();
+      $(".beats-rating-list").hide();
+      $("#critique_tab_"+track_id).addClass('close-tab-icon');
+      $("#mobile_critique_tabs_"+track_id).show();
+    });
+
+    $(".critique-link-close").click(function(){
+      track_id = this.id
+      $(".beats-rating-list").hide();
+      $("#mobile_critique_tabs_"+track_id).hide();
+      $("#critique_tab_"+track_id).removeClass('close-tab-icon');
+      $(".beats-show").show();
+    });
+    
+  });
+

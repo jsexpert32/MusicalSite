@@ -1,0 +1,5 @@
+| $('#artist_tracklist_results').html('
+= j render partial: 'beats/beats', locals: { tracks: @artist_tracks }
+| ');
+| wait_and_run(waveform_proc(), 500);
+| initSlider();

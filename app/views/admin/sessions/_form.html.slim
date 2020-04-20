@@ -1,0 +1,10 @@
+= simple_form_for admin_session, url: admin_session_path do |f|
+  = f.hidden_field :admin, value: true
+  = f.label :email
+  br
+  p = f.input :email, label: false
+  = f.label :password
+  br
+  p = f.input :password, label: false
+  br
+  p = f.button :button, 'Login'

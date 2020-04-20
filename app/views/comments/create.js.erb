@@ -1,0 +1,12 @@
+$(document).ready(function(){
+  src = "/assets/up-arrow.png";
+  $("#send_comment").html("<img src='"+src+"'>");
+  $('#comment-content .error').html("");
+  <% if !@comment.id.nil? %>
+    $("#comment_body").val("");
+    $(".critique-counter").html("<%= @comment.critique.track.comment_threads.count %> CRITIQUES");
+    $("ul.comment-lists").append("<%= escape_javascript(render(:partial => 'critiques/comment', locals: {:comment=> @comment,animated_class: 'new-item'})) %>");    
+  <% else %>
+    $('#comment-content .error').prepend("<%= @comment.errors.full_messages[0] %>");  
+  <% end %>  
+});

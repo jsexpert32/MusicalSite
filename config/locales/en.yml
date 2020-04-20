@@ -1,0 +1,37 @@
+en:
+  links:
+    sign_in: SIGN IN
+    sign_up: CREATE AN ACCOUNT
+    upload: UPLOAD
+    here: here
+  messages:
+    info:
+      confirm_email: Sorry, you must confirm your email
+  soundloud_page:
+    soungs_in_soundcloud:
+      zero: Not found songs in soundcloud
+      one: One song in soundcloud
+      other: "%{count} songs in soundcloud"
+    check_to_import: Check to import
+    import_selected_beats: import selected beats
+    tracks_have_been_imported: Tracks have been imported
+    next_page: Next page
+    first_page: First page
+  count_beats:
+    zero: NO BEATS
+    one: ONE BEAT
+    other: "%{count} BEATS"
+  count_critiques:
+    zero: NO CRITIQUES
+    one: ONE CRITIQUE
+    other: "%{count} CRITIQUES"
+  charts:
+    period:
+      week: This Week
+      month: This Month
+      all: All Time
+    charted_time:
+      by_week_charts: this week
+      by_month_charts: this month
+      by_all_time_charts: all
+  beat_deficit: You need to leave a critique for other tracks

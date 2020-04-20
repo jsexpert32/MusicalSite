@@ -1,0 +1,6 @@
+= render 'shared/slider'
+- if current_user
+  .container.container--overlaid
+    = render partial: 'beats/beats', locals: { tracks: @tracks }
+- else
+  = render 'content'

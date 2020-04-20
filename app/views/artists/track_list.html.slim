@@ -1,0 +1,21 @@
+.top-panel
+  .container
+    .columns
+      .column.is-gapless.is-6#all-beats-left
+        h1 = @artist.artist_info
+      .column.is-gapless.is-6#all-beats-right
+        ul.beats-menu
+          a href='#' CONTACT
+section.inner-content.track-filter
+  .container
+    .columns
+      .column.is-6
+        p = I18n.t('count_beats', count: current_user.tracks.count)
+      .column.is-6
+        .bs-docs-example
+          .styled-select.black.rounded
+            select#tracks_order
+              option Newest - Oldest
+              option Oldest - Newest
+    #artist_tracklist_results
+      = render partial: 'beats/beats', locals: { tracks: @artist_tracks }

@@ -1,0 +1,40 @@
+header.header-top.is-clearfix
+  .header-left
+    h5 profile
+    h6 To edit something, just click on it.
+  .header-right
+    ul.nav-right
+      li.active
+        a href='#' personal
+      li
+        a href='#' social
+.columns.artist-info
+  .column.is-4
+    .artist-thumb
+      = image_tag @user.avatar.url
+      a href='#' class='uk-button uk-button-success uk-button-large' edit avatar
+  .column.is-8
+    .artist-details
+      .artist-name
+        = @user.username
+        a href='#' class='edit'
+          i class='uk-icon-pencil'
+      .artist-location
+        = @user.location
+        a href='#' class='edit'
+          i class='uk-icon-pencil'
+      .artist-url
+        a href='#'
+          | http://
+          span = @user.slug
+          | .beatthread.com
+        a href='#' class='edit'
+          i class='uk-icon-pencil'
+    .artist-about
+      h3 about
+      .uk-form
+        .uk-form-row
+          textarea.uk-width-1-1 placeholder='Describe about yourself...' rows='13'
+            = @user.bio
+.form-action.text-right
+  input type='submit' value='save' class='uk-button uk-button-success uk-button-large'

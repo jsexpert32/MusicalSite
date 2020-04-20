@@ -1,0 +1,127 @@
+body.beats-index {
+  #after-slider { padding-top: 1rem; }
+  .send-button {
+    left: 10rem !important;
+  }
+  .counter { position: absolute !important; bottom: 2rem !important; }
+
+  .subgenre { display: flex;  padding: 1em;}
+}
+
+
+.full-bg {
+  background-color: white;
+  margin-bottom: 1.4em!important;
+}
+
+.line-border {
+  background-color: #e0e0e0;
+  height: 2.3em;
+  position: absolute;
+  width: 1px;
+  z-index: 1;
+}
+
+.top-list {
+  margin: 0;
+  padding: 1em 0 1em 1em;
+  list-style: none;
+  display: inline-block;
+
+  li {
+    display: inline-block;
+    font-family: 'Yantramanav';
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #4a4a4a;
+    padding-right: 10px;
+    line-height: 21px;
+    vertical-align: middle;
+  }
+
+  span {
+    padding: 0 8px;
+    color: #4a4a4a;
+  }
+}
+
+.critiques-amount {
+  letter-spacing: 0.6px;
+  color: #28ab60;
+  font-family: 'Yantramanav';
+  font-weight: 400;
+  text-align: right;
+}
+
+.track-mask {
+  padding: 10px 0 10px 10px;
+
+  .track-cover {
+    background-repeat: no-repeat;
+    background-size: 190px 175px;
+    height: 175px;
+    width: 190px;
+    margin: auto 0;
+  }
+
+  .rectangle {
+    background-color: #f5f5f5;
+
+    .separator-box {
+      background-image: image-url("separate-line");
+      position: relative;
+      height: 98px;
+    }
+  }
+}
+
+.tabs {
+  line-height: normal;
+  position: relative;
+  clear: both;
+  margin: 0;
+  background: white;
+  overflow: inherit;
+
+  .tab {
+    margin-top: 1.2em;
+
+    label {
+      position: relative;
+      margin: 0 1.4em;
+      font-weight: 500;
+      font-family: "Yantramanav";
+      text-transform: uppercase;
+      -webkit-transition: background-color 0.17s linear;
+      font-size: 15px;
+      letter-spacing: 2.2px;
+      color: $primary;
+    }
+
+    label img {
+      vertical-align: top;
+    }
+  }
+}
+
+.tab [type=radio] { display: none; }
+
+[type=radio]:checked ~ label {
+  z-index: 1;
+  color: #4a4a4a;
+  background: white;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #2bb673;
+}
+
+.title-big {
+  color: $darktext !important;
+  display: table-cell;
+  font-family: "Yantramanav";
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  line-height: normal;
+  margin: 0 !important;
+  padding: 20px 18px 22px !important;
+  text-transform: capitalize !important;
+}

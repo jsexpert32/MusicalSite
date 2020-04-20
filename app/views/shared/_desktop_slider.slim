@@ -1,0 +1,20 @@
+.d-slide
+  .flexslider
+    .sliderlogo-bar.new-slider-logo
+      - if params[:profile].present?
+        = link_to '', profile_session_path(provider: params[:profile]), remote: true, id: 'profile-link'
+      a href="#"
+        = image_tag "/assets/beat-logo-bar.png"
+    ul.slides
+      li
+        img src="assets/slider-1.jpg" /
+        p Get feedback on your music.
+      li
+        img src="assets/slider-2.jpg" /
+        p Be seen by top producers.
+      li
+        img src="assets/slider-3.jpg" /
+        p Enter producer contests
+      li
+        img src="assets/slider-4.jpg" /
+        p Get your own artist page

@@ -1,0 +1,24 @@
+= render 'shared/desktop_slider'
+= render 'shared/mobile_slider'
+
+javascript:
+  window.onload=function(){
+    if (document.getElementById('profile-link')!=null||document.getElementById('profile-link')!="") {
+      jQuery('#profile-link').click();
+    }
+  }
+
+  $("#slider-container").sliderUi({
+    speed: 400,
+    cssEasing: "cubic-bezier(0.285, 1.015, 0.165, 1.000)"
+  });
+  $("#caption-slide").sliderUi({
+    caption: true
+  });
+
+  $(document).ready(function () {
+    $('.flexslider').flexslider({
+    animation: 'fade',
+    controlsContainer: '.flexslider'
+   });
+  });

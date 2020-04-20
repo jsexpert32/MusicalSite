@@ -1,0 +1,12 @@
+doctype html
+html
+  = render 'layouts/head'
+  body class="#{body_class}"
+    = render 'shared/nav'
+    - if @new_user
+      h1 Hi #{@new_user.username}
+    section.light-gray-bg
+      = yield
+      = insert_paloma_hook
+
+    script src="https://cdnjs.cloudflare.com/ajax/libs/tether-drop/1.4.2/js/drop.min.js"

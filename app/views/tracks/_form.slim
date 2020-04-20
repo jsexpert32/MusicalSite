@@ -1,0 +1,15 @@
+.top-panel
+  .container
+    .columns
+      .column.is-gapless
+        h1 = current_user.artist_info
+
+section.inner-content
+  .container
+    .columns.is-gapless
+      .column
+        h4 = I18n.t('count_beats', count: current_user.track_count)
+
+    = simple_form_for @track, html: { class: 'form-track' } do |f|
+      = render 'tracks/upload_audio', f: f
+      = render 'tracks/uploading_content', f: f

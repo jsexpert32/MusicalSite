@@ -1,0 +1,14 @@
+.about-wrapper
+  .columns.is-gapless
+    .column.is-8
+      .content-wrapper
+        h3.title About
+        p = @user.bio
+    .column.is-4
+      .content-wrapper.contact
+        h3.title contact
+        p
+          span.email
+            a href="mailto:#{@user.email}" target="_top" EMAIL
+            span
+              i class='uk-icon-envelope'

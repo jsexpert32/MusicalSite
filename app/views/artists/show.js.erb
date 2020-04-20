@@ -1,0 +1,5 @@
+<% js = escape_javascript(render partial: 'beats/list', locals: { tracks: @tracks }) %>
+
+$(document).ready(function(){
+  $("#filterrific_results").html("<%= js %>");
+})

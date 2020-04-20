@@ -1,0 +1,19 @@
+.top-panel
+  .container
+    .columns
+      .column.is-gapless.is-6#all-beats-left
+        h1 CRITIQUES
+      .column.is-gapless.is-6#all-beats-right
+        ul.beats-menu
+          li.current
+            a href="#this-week"  Recieved
+          li
+            a href="#given" Given
+
+section.critique-wrap
+	#this-week.beat-tab-content
+	  = render 'index', comments: @comments
+	#given.beat-tab-content
+		= render 'index', comments: @given_comments
+javascript:
+	jQuery('#crtq_comments').addClass('active');

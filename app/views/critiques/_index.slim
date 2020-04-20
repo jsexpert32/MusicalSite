@@ -1,0 +1,56 @@
+.back-bg
+  |
+.list-container
+  .container#after-slider
+    .is-clearfix
+      .is-pulled-left
+        .critique-counter #{comments.count} CRITIQUES recieved
+      .is-pulled-right.sort-filter
+        .uk-form-select.uk-button.uk-gray-select data-uk-form-select="" 
+          span
+          i.uk-icon-caret-down
+          = form_tag critiques_path, method: :get do
+            = select_tag "sort",options_for_select(sort_params,selected: params[:sort]),onchange: "this.form.submit()"
+
+    ul.critique-listing
+      - if comments.present?
+        - comments.each do |comment|
+          li
+            .columns.is-gapless
+              .column.is-8.critique-box
+                .is-clearfix
+                  .critique-thumb.is-pulled-left
+                    = image_tag comment.user.avatar.url
+                  .critique-detail.is-pulled-left
+                    .is-clearfix
+                      .is-pulled-left
+                        h5 #{comment.user.name}
+                      .is-pulled-right.right-nav
+                        ul
+                          li
+                            span.critique-time  #{time_ago_in_words(comment.created_at).gsub('about','')} ago
+                          li
+                            .uk-button-dropdown data-uk-dropdown="{mode:'click'}" 
+                              button.uk-button
+                                i.uk-icon-circle
+                                i.uk-icon-circle
+                                i.uk-icon-circle
+                              .uk-dropdown.uk-dropdown-bottom
+                                ul.uk-nav.uk-nav-dropdown
+                                  li
+                                    a href="#"  Share
+                                  li
+                                    a href="#"  Flag comment
+                                  li
+                                    a href="#"  report user
+                                  
+                    h3.critique-comment #{comment.body}
+              .column.is-4.critique-right
+                .critique-of  Critique of
+                .song-name  #{comment.critique.track.title}
+                a href="#{critiques_path(comment.critique.id)}" SEE FULL BEAT THREAD
+      -else
+        li
+          .columns.is-gapless
+            .column.is-8.critique-box
+              = "No Critiques"

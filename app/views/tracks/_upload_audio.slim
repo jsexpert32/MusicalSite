@@ -1,0 +1,33 @@
+.beat-uploading__upload-content class="#{'hidden' if @track.errors.present? || @track.id}" data-upload-content='true'
+  h3 UPLOAD A BEAT OR IMPORT FROM SOUNDCLOUD
+  .columns.is-gapless
+    .column.is-6
+      - unless @track.id
+        .beat-uploading__file
+          - if @beat_deficit
+            label for="beat_deficit_file_pop"
+              .beat-uploading__choose-file.beat_deficit CHOOSE FILE TO UPLOAD
+            input.open-popup type='checkbox' id="beat_deficit_file_pop"
+            = render partial: 'tracks/beat_deficit'
+          - else
+            = f.label :audio, for: 'upload-audio' do
+              .beat-uploading__choose-file
+                | CHOOSE FILE TO UPLOAD
+            = f.file_field :audio, class: 'hidden', id: 'upload-audio', accept: 'audio/mpeg, audio/mp3, audio/ogg, audio/x-aiff, audio/flac, application/octetstream'
+          p then choose beats to import
+
+    .column.is-6
+      .beat-uploading__file
+        - if @beat_deficit
+          label for="beat_deficit_pop"
+            .beat-uploading__choose-file.beat-uploading__choose-file--scloud.beat_deficit
+              | SYNC TO
+              = image_tag "/assets/soundcloud-logo.png"
+          input.open-popup type='checkbox' id="beat_deficit_pop"
+          = render partial: 'tracks/beat_deficit'
+        - else
+          .beat-uploading__choose-file.beat-uploading__choose-file--scloud
+            = link_to soundcloud_tracks_path do
+              | SYNC TO
+              = image_tag "/assets/soundcloud-logo.png"
+        p then choose beats to import

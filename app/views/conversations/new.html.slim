@@ -1,0 +1,11 @@
+h1 New conversation
+= form_tag conversations_path, method: :post
+  div
+    = select_tag :user_id, options_from_collection_for_select(@recipients, :id, :name)
+  div
+    = text_field_tag :subject, nil, placeholder: "Subject"
+  div
+    = text_area_tag :body, nil, placeholder: "Leave a comment"
+
+  = submit_tag
+= javascript_include_tag 'application'

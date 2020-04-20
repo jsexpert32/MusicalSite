@@ -1,0 +1,28 @@
+#mobile-navigation
+  nav.main-nav.main-nav-bg.nav
+    ul.mobile-header
+      li 
+        a 
+          i.fa.fa-bars#toggle-bar
+        ul#toggle-bar-list
+          li
+            = link_to "Beats", beats_path
+          li
+            = link_to "Charts", charts_path
+          li
+            = link_to "Battleground", battleground_index_path
+          
+      li 
+        a href="#{home_index_path}"
+          = image_tag "/assets/BT-logo.1.svg", style: "width: 39px; height: 44px;"
+      li
+        a 
+          span SIGN IN
+
+
+javascript:
+  $(document).ready(function(){
+      $("#toggle-bar").click(function(){
+          $("#toggle-bar-list").toggle();
+      });
+  });

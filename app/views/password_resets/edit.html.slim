@@ -1,0 +1,5 @@
+h1= 'Update Password'
+= simple_form_for @user, url: password_reset_path(params[:id]) do |f|
+  = f.input :password, input_html: { autocomplete: 'off' }
+  = f.input :password_confirmation, input_html: { autocomplete: 'off' }
+  = f.button :button, data: { disable_with: spinner_loader }

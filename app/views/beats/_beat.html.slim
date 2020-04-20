@@ -1,0 +1,86 @@
+.beat#beat data-id=(track.id) data-done="false"
+  .beat__content.beat__content--left
+    .beat__bar
+      - if chart = track.chart_by_period(params[:period])
+        .beat__month
+          span = chart.position
+          p = I18n.t('charts.charted_time.' + (params[:period] || 'by_week_charts'))
+    = image_tag track.image_url(:original)
+  .beat__content
+    .beat__bar
+      ul.beat__ratings
+        li
+          = rating_link track.id, 'fire', 'like'
+          span id="like_#{track.id}"
+            | #{track.like_count}
+        li
+          = rating_link track.id, 'sad', 'indifferent'
+          span id="indifferent_#{track.id}"
+            | #{track.indifferent_count}
+        li
+          = rating_link track.id, 'unlike', 'dislike'
+          span id="dislike_#{track.id}"
+            | #{track.dislike_count}
+      .beat__critiques.title = critique_show_link(track)
+    .beat__description
+      label for="info_pop_#{track.id}"
+        span.verified-icon
+          = image_tag '/assets/verified-crown.svg'
+        span.beat__artist-name #{track.user.username}
+        | "#{track.title}"
+      input.beat__open-popup type='checkbox' id="info_pop_#{track.id}"
+      = render partial: 'beats/info_popup', locals: { track: track }
+      .separator-box
+        - if track.audio.present?
+          = render partial: 'shared/waveform', locals: { url: extract_url(track.audio.url), data: track.waveform }
+
+  - if track.user == current_user
+    .column.is-4.is-text-centered
+      .edit-beat data-edit-share='true'
+        .columns.is-gapless#share-list
+          .column.is-2
+            .edit-beat__left data-edit-left='true'
+              = image_tag '/assets/eye-two.jpg'
+              span private
+          .column.is-8 data-slider=(track.streamable ? 1 : 0) data-id=(track.id)
+            .edit-beat__slider data-edit-slider='true'
+          .column.is-2
+            .edit-beat__right data-edit-right='true'
+              = image_tag '/assets/eye-one.jpg'
+              span Public
+        .columns.is-gapless
+          .column.is-6
+            = link_to 'Edit', edit_track_path(track.id), class: 'edit-share-link editable'
+          .column.is-6.text-right
+            a.edit-share-link href="#"
+              | share
+      .edit-beat__note Click “edit” to add info and assign genres to songs from Soundcloud
+  - else
+    .beat__forms
+      .beat-menu
+        .beat-menu__tab
+          input id="crit-#{track.id}" name="tab-group-#{track.id}" type="radio" checked="checked"
+          label for="crit-#{track.id}"  Critique
+          .beat-menu__content
+            = render 'beats/critique', track: track
+        .beat-menu__tab
+          input name="tab-group-#{track.id}" type="radio" id="cont-#{track.id}"
+          label for="cont-#{track.id}"  contact
+          .beat-menu__content
+            | For inquiries, contact me here:
+            input.input.beat-menu__email placeholder=("email@emailaddress.com") type="text"
+        .beat-menu__tab
+          input name="tab-group-#{track.id}" type="radio" id="info-#{track.id}"
+          label for="info-#{track.id}"  Info
+          .beat-menu__content
+            = track.description
+        .beat-menu__tab
+          input name="tab-group-#{track.id}" type="radio" id="share-#{track.id}"
+          label for="share-#{track.id}" 
+            = link_to (image_tag "/assets/share.svg"), social_share_path(track), remote: true, id: 'share-link'
+          .beat-menu__content
+            
+
+
+
+

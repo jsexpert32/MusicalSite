@@ -1,0 +1,54 @@
+fieldset
+  legend
+    span.provider-icon
+      i.fa class="fa-#{params[:provider]}"
+    = "#{params[:provider].upcase} AUTHORIZED"
+  hr
+  = simple_form_for user, data: {remote: true} do |f|
+    .profile-form.count-fields-1
+      p= "KEEP #{params[:provider].upcase} USERNAME OR TYPE A NEW ONE"
+      br
+      div
+        = f.input_field :username, label: false, autofocus: true
+        = f.error :username
+      br
+      a.next.tw-next Next
+    .profile-form.count-fields-2.hide
+      p= 'IS THIS THE CORRECT LOCATION?'
+      br
+      div
+        = f.input_field :city, label: false, placeholder: 'City', autofocus: true
+        = f.error :city
+      br
+      div
+        = f.input_field :country, priority: ['United States']
+        = f.error :country
+      br
+      a.next.tw-next Next
+    .profile-form.count-fields-3.hide
+      p= 'Your email'
+      div
+        = f.input_field :email, label: false, placeholder: 'Email', autofocus: true, required: true
+        = f.error :email
+      .clearborder
+      p= 'Your password'
+      div
+        = f.input_field :password, label: false, placeholder: 'Password', autofocus: true
+        = f.error :password
+      br
+      div
+        = f.input_field :password_confirmation, label: false, placeholder: 'Password (must match)', autofocus: true
+        = f.error :password_confirmation
+      br
+      a.next.tw-next Next
+    .profile-form.hide
+      p= 'USE THE SAME AVATAR?'
+      .form-group
+        .avatar_wrap
+          = image_tag current_user.avatar.url(:medium), class: 'avatar-image', id: 'image_upload_preview'
+        = f.label :browse, class: 'label-image', for: 'inputFile'
+        = f.file_field :avatar, class: 'hide', id: 'inputFile'
+      = hidden_field_tag 'provider', params[:provider]
+      = hidden_field_tag 'avatar_data', avatar_data
+      br
+      = f.button :button, 'Submit', data: { disable_with: spinner_loader }, class: 'next tw-next'

@@ -1,0 +1,154 @@
+.beat
+  display: flex
+  background: $white
+  margin-bottom: 60px
+  height: 259px
+
+  img
+    margin-left: 10px
+
+  &__forms
+    width: 35%
+
+  &__content
+    width: 49%
+    position: relative
+    display: block
+
+    &--left
+      width: 16%
+      display:none
+
+      img
+        margin: 10px
+        width: 93%
+
+  &__name
+    background: $lighttext
+
+  &__artist-name
+    padding: 0 10px
+    color: $primary
+
+  &__bar
+    display: flex
+    border-right: solid 1px $gray-accent
+    min-height: 65px
+
+  &__month
+    display: inline-block
+    height: 65px
+    width: 185px
+    background-color: $gold-orange
+    background-image: image-url("date-icon.jpg")
+    background-repeat: no-repeat
+
+    span
+      color: $white
+      display: inline-block
+      font-weight: 300
+      font-size: 36px
+      letter-spacing: -1.2px
+      line-height: 70px
+      padding-left: 16px
+      width: 72px
+      text-align: center
+
+    p
+      color: $white
+      float: right
+      font-size: 10px
+      letter-spacing: 2.2px
+      margin-right: 7px
+      text-transform: uppercase
+      font-weight: bold
+
+  &__ratings
+    margin: 0
+    padding: 1em 0 1em 1em
+    list-style: none
+    display: inline-block
+
+    li
+      display: inline-block
+      font-size: 14px
+      letter-spacing: 0.5px
+      color: #4a4a4a
+      padding-right: 10px
+      line-height: 21px
+      vertical-align: middle
+
+    span
+      padding: 0 8px
+      color: #4a4a4a
+
+  &__critiques
+    padding-right: 25px
+    margin-top: 25px
+    margin-left: auto
+    margin-right: 10px
+
+    a
+      font-size: 18px
+      color: $primary
+      font-weight: 400
+
+    span
+      font-weight: 700
+
+
+  &__description
+    width: 100%
+    background: $lightgray
+    display: inline-block
+    position: absolute
+    letter-spacing: 1.5px
+    font-weight: 400
+    padding-top: 10px
+    color: $darktext
+    text-transform: capitalize
+
+    img
+      padding-top: 10px
+      margin-bottom: -8px
+      width: auto
+
+    label
+      display: block
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+
+    span:first-letter
+      text-transform: uppercase
+
+  &__open-popup
+    width: 0
+    opacity: 0
+    position: absolute
+
+    &:focus ~ .popup
+      display: block
+
+  .separator-box
+    display: inline-block
+    margin-top: 26px
+    position: relative
+    width: 100%
+
+.form-track
+
+  .open-popup
+    width: 0
+    opacity: 0
+
+  .open-popup:focus ~ .popup
+    display: block
+
+  .popup--info
+    left: 25%
+    padding: 1em
+    top: -25px
+    width: 300px
+    font-weight: 900
+    font-family: "Yantramanav"

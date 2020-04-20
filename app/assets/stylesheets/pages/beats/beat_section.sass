@@ -1,0 +1,51 @@
+.beat-section
+
+  &__left
+
+    select
+      appearance: window
+      background-color: $lightgray
+      border: medium none
+      border-radius: 0
+      min-height: 45px
+      width: 100%
+      color: $lighttext
+      display: block
+
+    p
+      margin-top: 1rem
+
+    .select:after
+      border-color: $primary
+      top: 75%
+
+    .select
+      display: block
+
+  &__right
+    padding-left: 25px !important
+
+  &__checkbox
+    margin-bottom: 18%
+    font-size: 16px
+    color: $darktext
+
+    span
+      padding: 0 0 0 40px
+      display: block
+
+      a
+        color: $primary
+        text-decoration: none
+
+    label
+      user-select: none
+
+    .column
+      padding: 0
+
+    input[type=checkbox] + label
+      padding: 0
+
+    input[type=checkbox].checkbox + label:before
+      margin-right: 15px

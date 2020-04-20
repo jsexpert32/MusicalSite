@@ -1,0 +1,17 @@
+.back-cover-image style="background-image:url(/assets/b-g-image2.png)"
+  = render 'artist_header_2'
+  .container
+    .user-wrap
+      .user-photo.is-clearfix
+        .user-thumb-round
+          .verified-crown
+            = image_tag 'verified-crown-large.png'
+          = image_tag 'artist-big-thumb.png'
+        .user-title
+          h2 Chris Keys
+          h4 OAKLAND, CA
+    .no-beats-notification
+      span This user has not uploaded any beats yet
+
+javascript:
+  $('#user_beats').addClass('active');

@@ -1,0 +1,25 @@
+header#header
+  ul.topNavigation
+    - count_ = current_user.score rescue 0
+    - if current_user.present?
+      li[style="margin-right:30px; max-width:calc(100% - 198px);"]
+        - if count_ <= 0
+          span
+            = link_to 'Make a critique', critique_path('uncommented'), :style => 'text-decoration: underline;color: #fff;'
+            |  to upload new tracks
+        - else
+          |  You can upload
+          span#userCount
+            = count_*(1)
+          = count_ == 1 ? ' track' : ' tracks'
+    |  <li class="track-upload
+    = count_ <= 0 ? ' disabled' : ''
+    | "> <a class="btn" style="width: 140px;
+    = count_
+    | "
+    = count_ > 0 ? 'href=' + new_track_path : ''
+    | >
+  i.fa.fa-cloud-upload.icon
+  span[style="font-size:2rem;margin-left:10px;"]
+    | Upload
+  li
